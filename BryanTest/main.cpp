@@ -20,18 +20,9 @@ int getSecondInteger()
     return secondNumber;
 }
 
-int main()
+char getOperation()
 {
-    // Declare variables
-    int firstNumber = 0;
-    int secondNumber = 0;
-
-    firstNumber = getFirstInteger();
-    secondNumber = getSecondInteger();
-    
-    // Determine the operatoin to be used
     char operation;
-    
     cout << "Please enter an operation to use:\n"
     << "A\tAddition\n"
     << "S\tSubtraction\n"
@@ -39,7 +30,18 @@ int main()
     << "D\tDivision\n"
     << "Please enter the operator now: " << endl;
     cin >> operation;
-    operation = toupper(operation);
+    return toupper(operation);
+}
+
+int main()
+{
+    int firstNumber = 0;
+    int secondNumber = 0;
+
+    firstNumber = getFirstInteger();
+    secondNumber = getSecondInteger();
+
+    char operation = getOperation();
     
     if(operation != 'A' && operation != 'S' && operation != 'M' && operation != 'D')
     {
