@@ -38,6 +38,36 @@ bool validateInput(char operation)
     return operation == 'A' || operation == 'S' || operation == 'M' || operation == 'D';
 }
 
+int addition(int first, int second)
+{
+    return first + second;
+}
+
+int subtraction(int first, int second)
+{
+    if (first > second)
+    {
+        return first - second;
+    }
+
+    return second - first;
+}
+
+int multiplication(int first, int second)
+{
+    return first * second;
+}
+
+int division(int first, int second)
+{
+    if (first > second)
+    {
+        return first / second;
+    }
+
+    return second / first;
+}
+
 int main()
 {
     int firstNumber = 0;
@@ -55,29 +85,20 @@ int main()
     }
 
     int answer = 0;
-    // Determine the answer
     
-    if (operation == 'A')
+    switch(operation)
     {
-        answer = firstNumber + secondNumber;
-    }
-    else if (operation == 'S')
-    {
-        if (firstNumber > secondNumber)
-            answer = firstNumber - secondNumber;
-        else(secondNumber > firstNumber);
-            answer = secondNumber - firstNumber;
-    }
-    else if (operation == 'M')
-    {
-        answer = firstNumber * secondNumber;
-    }
-    else if (operation == 'D')
-    {
-        if (firstNumber > secondNumber)
-            answer = firstNumber / secondNumber;
-        else (secondNumber > firstNumber);
-            answer = secondNumber / firstNumber;
+        case 'A':
+            answer = addition(firstNumber, secondNumber);
+            break;
+        case 'S':
+            answer = subtraction(firstNumber, secondNumber);
+            break;
+        case 'M':
+            answer = multiplication(firstNumber, secondNumber);
+            break;
+        case 'D':
+            answer = division(firstNumber, secondNumber);
     }
     
     cout << "The answer to your problem is: " << answer << endl;
