@@ -33,6 +33,11 @@ char getOperation()
     return toupper(operation);
 }
 
+bool validateInput(char operation)
+{
+    return operation == 'A' || operation == 'S' || operation == 'M' || operation == 'D';
+}
+
 int main()
 {
     int firstNumber = 0;
@@ -43,7 +48,7 @@ int main()
 
     char operation = getOperation();
     
-    if(operation != 'A' && operation != 'S' && operation != 'M' && operation != 'D')
+    if(!validateInput(operation))
     {
         cout << "Invalid input for operator.  Please use 'A, S, M, or D.'" << endl;
         return 1;
