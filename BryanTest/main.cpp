@@ -29,6 +29,12 @@ int main()
     cin >> operation;
     operation = toupper(operation);
     
+    if(operation != 'A' && operation != 'S' && operation != 'M' && operation != 'D')
+    {
+        cout << "Invalid input for operator.  Please use 'A, S, M, or D.'" << endl;
+        return 1;
+    }
+
     // Determine the answer
     
     if (operation == 'A')
@@ -53,13 +59,8 @@ int main()
         else (secondNumber > firstNumber);
             answer = secondNumber / firstNumber;
     }
-    else(operation != 'A' && operation != 'S' && operation != 'M' && operation != 'D');
-    {
-        cout << "Invalid input for operator.  Please use 'A, S, M, or D.'" << endl;
-    }
     
     cout << "The answer to your problem is: " << answer << endl;
-    
     
     return 0;
 }
