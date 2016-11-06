@@ -2,23 +2,35 @@
 #include <iomanip>
 using namespace std;
 
+int getFirstInteger()
+{
+    int firstNumber = 0;
+    cout << "Please enter first integer: " << endl;
+    cin >> firstNumber;
+    
+    return firstNumber;
+}
+
+int getSecondInteger()
+{
+    int secondNumber = 0;
+    cout << "Please enter second integer: " << endl;
+    cin >> secondNumber;
+    
+    return secondNumber;
+}
 
 int main()
 {
     // Declare variables
     int firstNumber = 0;
     int secondNumber = 0;
-    int answer = 0;
-    char operation;
-    
-    
-    // Ask user to enter to two integers
-    cout << "Please enter first integer: " << endl;
-    cin >> firstNumber;
-    cout << "Please enter second integer: " << endl;
-    cin >> secondNumber;
+
+    firstNumber = getFirstInteger();
+    secondNumber = getSecondInteger();
     
     // Determine the operatoin to be used
+    char operation;
     
     cout << "Please enter an operation to use:\n"
     << "A\tAddition\n"
@@ -35,6 +47,7 @@ int main()
         return 1;
     }
 
+    int answer = 0;
     // Determine the answer
     
     if (operation == 'A')
